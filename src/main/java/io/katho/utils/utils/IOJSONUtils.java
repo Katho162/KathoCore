@@ -1,5 +1,6 @@
 package io.katho.utils.utils;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -21,7 +22,7 @@ public class IOJSONUtils {
      * @throws IOException
      */
     public static void write(String path, JSONObject obj) throws IOException {
-        IOUtils.write(obj.toJSONString(), new FileOutputStream(path), "UTF-8");
+        FileUtils.writeStringToFile(new File(path), obj.toJSONString(), "UTF-8");
     }
 
     /**
@@ -31,7 +32,7 @@ public class IOJSONUtils {
      * @throws IOException
      */
     public static void write(File file, JSONObject obj) throws IOException {
-        IOUtils.write(obj.toJSONString(), new FileOutputStream(file), "UTF-8");
+        FileUtils.writeStringToFile(file, obj.toJSONString(), "UTF-8");
     }
 
     /**
@@ -41,7 +42,7 @@ public class IOJSONUtils {
      * @throws IOException
      */
     public static void write(URI path, JSONObject obj) throws IOException {
-        IOUtils.write(obj.toJSONString(), new FileOutputStream(IOUtils.toString(path, "UTF-8")), "UTF-8");
+        FileUtils.writeStringToFile(new File(path), obj.toJSONString(), "UTF-8");
     }
 
     /**

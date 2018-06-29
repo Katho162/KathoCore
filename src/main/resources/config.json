@@ -1,7 +1,11 @@
 {
-  "AUTHENTICATION": {
-    "TIME_INTERVAL": 86400000
+  "authentication": {
+    "timeInterval": 86400000
   },
-  "MESSAGES": {
+  "messages": {
+    "registerUsage": "&cUse: /register <senha> <senha>",
+    "registerAlready": "&cVocê ja esta registrado por favor entre utilizando: /login <senha>",
+    "registerSuccess": "&eVocê esta registrado com sucesso. Guarde ou memorize sua senha para entrar novamente.",
+    "registerConfirm": "&cAs duas senhas precisão ser iguais. /register <senha> <senha>"
   }
 }

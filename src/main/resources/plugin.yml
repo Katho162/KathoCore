@@ -4,3 +4,5 @@ author: Katho
 version: 1.0.0
 main: io.katho.utils.KathoUtils
 commands:
+   register:
+   login:
