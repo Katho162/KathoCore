@@ -1,21 +1,21 @@
 package io.katho.utils;
 
 import io.katho.utils.cmds.Register;
-import io.katho.utils.utils.IOJSONUtils;
-import io.katho.utils.utils.PluginMessages;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
 
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class KathoUtils extends JavaPlugin {
 
+    private static List<Player> loggedPlayers;
     private static KathoUtils instance;
 
     public void onEnable() {
         instance = this;
+        loggedPlayers = new ArrayList<Player>();
         registerCommands();
         registerListeners();
         buildFiles();
@@ -32,11 +32,12 @@ public class KathoUtils extends JavaPlugin {
 
     private void buildFiles() {
         saveResource("config.json", false);
-        Bukkit.getLogger().info("Build plugin files...");
     }
 
     public static KathoUtils getInstance() {
         return instance;
     }
+
+    public static List<Player> getLoggedPlayers() { return loggedPlayers; }
 
 }
