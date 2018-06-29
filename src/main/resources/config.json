@@ -7,6 +7,10 @@
     "registerAlready": "&cVocê ja esta registrado por favor entre utilizando: /login <senha>",
     "registerSuccess": "&eVocê esta registrado com sucesso. Guarde ou memorize sua senha para entrar novamente.",
     "registerConfirm": "&cAs duas senhas precisão ser iguais. /register <senha> <senha>",
-    "alreadyLogged": "&cVocê ja esta logado."
+    "alreadyLogged": "&cVocê ja esta logado.",
+    "loginNotYet": "&cVocê ainda não possui uma conta por favor utilize: /register <senha> <senha>",
+    "loginUsage": "&cUse: /login <senha>",
+    "loginSuccess": "&eVocê entrou com sucesso!",
+    "loginIncorrect": "&cSenha incorreta."
   }
 }

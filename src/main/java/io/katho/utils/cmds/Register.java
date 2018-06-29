@@ -34,6 +34,7 @@ public class Register implements CommandExecutor {
                             playerObj.put("registerTimestamp", System.currentTimeMillis());
                             playerObj.put("lastLogin", System.currentTimeMillis());
                             playerObj.put("password", DigestUtils.sha256Hex(args[0]));
+                            playerObj.put("lastIP", p.getAddress().getHostName());
                             try {
                                 IOJSONUtils.write(playerFile, playerObj);
                             } catch (IOException e) {
