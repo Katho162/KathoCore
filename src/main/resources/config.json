@@ -11,6 +11,12 @@
     "loginNotYet": "&cVocê ainda não possui uma conta por favor utilize: /register <senha> <senha>",
     "loginUsage": "&cUse: /login <senha>",
     "loginSuccess": "&eVocê entrou com sucesso!",
-    "loginIncorrect": "&cSenha incorreta."
+    "loginIncorrect": "&cSenha incorreta.",
+    "loginTitle": "&ePor-favor se logue:",
+    "loginSubtitle": "/login <senha>",
+    "loginWelcomeTitle": "&eBem-vindo!",
+    "loginWelcomeSubtitle": "&eBem-vindo!",
+    "registerTitle": "&ePor-favor se registre:",
+    "registerSubtitle": "/register <senha> <senha>"
   }
 }

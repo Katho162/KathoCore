@@ -14,6 +14,9 @@ import java.net.URI;
 
 public class IOJSONUtils {
 
+    public IOJSONUtils() {
+    }
+
     /**
      * Save a JSONObject to a file.
      * @param path is the file path as String.

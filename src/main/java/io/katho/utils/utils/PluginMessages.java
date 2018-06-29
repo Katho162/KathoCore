@@ -10,6 +10,9 @@ import java.io.IOException;
 
 public class PluginMessages {
 
+    public PluginMessages(){
+    }
+
     /**
      * This method is the implementation of the getter of plugin messages configuration.
      * @param message is the message key.

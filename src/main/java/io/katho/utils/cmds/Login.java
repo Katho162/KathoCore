@@ -1,8 +1,10 @@
 package io.katho.utils.cmds;
 
 import io.katho.utils.KathoUtils;
+import io.katho.utils.listeners.PreLogin;
 import io.katho.utils.utils.IOJSONUtils;
 import io.katho.utils.utils.PluginMessages;
+import io.katho.utils.utils.Title;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -39,6 +41,9 @@ public class Login implements CommandExecutor {
                                 playerObj.replace("lastLogin", System.currentTimeMillis());
                                 IOJSONUtils.write(playerFile, playerObj);
                                 KathoUtils.getLoggedPlayers().add(p);
+                                PreLogin.loginTitle.clearTitle(p);
+                                Title title = new Title(PluginMessages.get("loginWelcomeTitle"), PluginMessages.get("loginWelcomeSubtitle"), 1, 3, 1);
+                                title.send(p);
                                 p.sendMessage(PluginMessages.get("loginSuccess"));
                                 return true;
                             } else {
