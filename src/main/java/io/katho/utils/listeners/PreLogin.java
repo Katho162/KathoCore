@@ -4,6 +4,7 @@ import io.katho.utils.KathoUtils;
 import io.katho.utils.utils.IOJSONUtils;
 import io.katho.utils.utils.PluginMessages;
 import io.katho.utils.utils.Title;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,6 +14,7 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.inventory.ItemStack;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
@@ -87,14 +89,18 @@ public class PreLogin implements Listener {
                 long loginPeriod = (long) authObj.get("timeInterval");
                 long lastLogin = (long) playerObj.get("lastLogin");
 
-
-                if (timestamp > lastLogin + loginPeriod) {
-                    loginTitle = new Title(PluginMessages.get("loginTitle"), PluginMessages.get("loginSubtitle"), 1, 20, 1);
-                    loginTitle.send(p);
+                if (p.getAddress().getHostName().equals(playerObj.get("lastIP"))) {
+                    if (timestamp > lastLogin + loginPeriod) {
+                        PreLogin.loginTitle = new Title(PluginMessages.get("loginTitle"), PluginMessages.get("loginSubtitle"), 1, 20, 1);
+                        PreLogin.loginTitle.send(p);
+                    } else {
+                        PreLogin.loginTitle = new Title(PluginMessages.get("loginWelcomeTitle"), PluginMessages.get("loginWelcomeSubtitle"), 1, 3, 1);
+                        PreLogin.loginTitle.send(p);
+                        KathoUtils.getLoggedPlayers().add(p);
+                    }
                 } else {
-                    loginTitle = new Title(PluginMessages.get("loginWelcomeTitle"), PluginMessages.get("loginWelcomeSubtitle"), 1, 3, 1);
-                    loginTitle.send(p);
-                    KathoUtils.getLoggedPlayers().add(p);
+                    PreLogin.loginTitle = new Title(PluginMessages.get("loginTitle"), PluginMessages.get("loginSubtitle"), 1, 20, 1);
+                    PreLogin.loginTitle.send(p);
                 }
 
             } catch (IOException e1) {

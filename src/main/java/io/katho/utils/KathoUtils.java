@@ -64,14 +64,21 @@ public class KathoUtils extends JavaPlugin {
                     JSONObject authObj = (JSONObject) configObj.get("authentication");
                     long loginPeriod = (long) authObj.get("timeInterval");
                     long lastLogin = (long) playerObj.get("lastLogin");
-                    if (timestamp > lastLogin + loginPeriod) {
+
+                    if (p.getAddress().getHostName().equals(playerObj.get("lastIP"))) {
+                        if (timestamp > lastLogin + loginPeriod) {
+                            PreLogin.loginTitle = new Title(PluginMessages.get("loginTitle"), PluginMessages.get("loginSubtitle"), 1, 20, 1);
+                            PreLogin.loginTitle.send(p);
+                        } else {
+                            PreLogin.loginTitle = new Title(PluginMessages.get("loginWelcomeTitle"), PluginMessages.get("loginWelcomeSubtitle"), 1, 3, 1);
+                            PreLogin.loginTitle.send(p);
+                            KathoUtils.getLoggedPlayers().add(p);
+                        }
+                    } else {
                         PreLogin.loginTitle = new Title(PluginMessages.get("loginTitle"), PluginMessages.get("loginSubtitle"), 1, 20, 1);
                         PreLogin.loginTitle.send(p);
-                    } else {
-                        PreLogin.loginTitle = new Title(PluginMessages.get("loginWelcomeTitle"), PluginMessages.get("loginWelcomeSubtitle"), 1, 3, 1);
-                        PreLogin.loginTitle.send(p);
-                        KathoUtils.getLoggedPlayers().add(p);
                     }
+
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 } catch (ParseException e1) {
