@@ -1,9 +1,14 @@
 package io.katho.utils.listeners;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import io.katho.utils.KathoUtils;
 import io.katho.utils.utils.IOJSONUtils;
 import io.katho.utils.utils.PluginMessages;
 import io.katho.utils.utils.Title;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,10 +20,13 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class PreLogin implements Listener {
@@ -112,8 +120,13 @@ public class PreLogin implements Listener {
             loginTitle = new Title(PluginMessages.get("registerTitle"), PluginMessages.get("registerSubtitle"), 1, 20, 1);
             loginTitle.send(p);
         }
-    }
 
+        Bukkit.getScheduler().runTaskLater(KathoUtils.getInstance(), () -> {
+            if (!KathoUtils.getLoggedPlayers().contains(p))
+                p.kickPlayer("§cVocê demorou muito para entrar no servidor.");
+        }, 20 * 20);
+
+    }
 
 
 }

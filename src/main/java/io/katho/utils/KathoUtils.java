@@ -54,7 +54,7 @@ public class KathoUtils extends JavaPlugin {
     public static List<Player> getLoggedPlayers() { return loggedPlayers; }
 
     private void prepareLogin() {
-        for (Player p : Bukkit.getOnlinePlayers()) {
+        Bukkit.getOnlinePlayers().forEach(p -> {
             File playerFile = new File(KathoUtils.getInstance().getDataFolder() + "/accounts/" + p.getUniqueId() + ".account");
             long timestamp = System.currentTimeMillis();
             if (playerFile.exists()) {
@@ -88,7 +88,8 @@ public class KathoUtils extends JavaPlugin {
                 PreLogin.loginTitle = new Title(PluginMessages.get("registerTitle"), PluginMessages.get("registerSubtitle"), 1, 20, 1);
                 PreLogin.loginTitle.send(p);
             }
-        }
+        });
+
     }
 
 }
