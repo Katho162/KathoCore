@@ -19,7 +19,9 @@ public class PlayerAccountDAOImpl implements PlayerAccountDAO {
 
     @Override
     public void addAccount(PlayerAccount playerAccount) {
-        try (Writer writer = new FileWriter(ACCOUNTS_DIR + playerAccount.getUUID() + ".json")) {
+        File dir = new File(ACCOUNTS_DIR);
+        dir.mkdirs();
+        try (Writer writer = new FileWriter(ACCOUNTS_DIR + playerAccount.getUUID() + ".json", false)) {
             gson.toJson(playerAccount, writer);
         } catch (IOException e) {
             e.printStackTrace();
@@ -28,12 +30,11 @@ public class PlayerAccountDAOImpl implements PlayerAccountDAO {
 
     @Override
     public PlayerAccount getAccount(UUID uuid) {
+        File dir = new File(ACCOUNTS_DIR);
+        dir.mkdirs();
         try (Reader reader = new FileReader(ACCOUNTS_DIR + uuid.toString() + ".json")) {
             return gson.fromJson(reader, PlayerAccount.class);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return null;
-        } catch (IOException e) {
+        }  catch (IOException e) {
             e.printStackTrace();
             return null;
         }
@@ -42,7 +43,8 @@ public class PlayerAccountDAOImpl implements PlayerAccountDAO {
     @Override
     public void removeAccount(UUID uuid) {
         File file = new File(ACCOUNTS_DIR + uuid.toString() + ".json");
-        if ((file == null) || !(file.exists())) {
+        file.getParentFile().mkdirs();
+        if (!file.exists()) {
             try {
                 throw new FileNotFoundException("The file doesn't exits or have no account on there.");
             } catch (FileNotFoundException e) {
@@ -62,6 +64,8 @@ public class PlayerAccountDAOImpl implements PlayerAccountDAO {
 
     @Override
     public void updateAccount(PlayerAccount playerAccount) {
+        File dir = new File(ACCOUNTS_DIR);
+        dir.mkdirs();
         try (Writer writer = new FileWriter(ACCOUNTS_DIR + playerAccount.getUUID() + ".json")) {
             gson.toJson(playerAccount, writer);
         } catch (IOException e) {

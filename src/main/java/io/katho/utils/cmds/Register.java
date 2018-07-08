@@ -1,14 +1,11 @@
 package io.katho.utils.cmds;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
 import io.katho.utils.KathoUtils;
 import io.katho.utils.listeners.PreLogin;
 import io.katho.utils.player.PlayerAccount;
 import io.katho.utils.player.PlayerAccountDAO;
-import io.katho.utils.player.PlayerAccountFile;
 import io.katho.utils.utils.PluginMessages;
+import io.katho.utils.utils.PluginMessagesImpl;
 import io.katho.utils.utils.Title;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -17,18 +14,16 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-
 public class Register implements CommandExecutor {
 
     private Plugin plugin;
     private PlayerAccountDAO playerAccountDAO;
+    private PluginMessages pluginMessages;
 
-    public Register(Plugin plugin, PlayerAccountDAO playerAccountDAO) {
+    public Register(Plugin plugin, PlayerAccountDAO playerAccountDAO, PluginMessages pluginMessages) {
         this.plugin = plugin;
         this.playerAccountDAO = playerAccountDAO;
+        this.pluginMessages = pluginMessages;
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -46,31 +41,28 @@ public class Register implements CommandExecutor {
 
                             PlayerAccount playerAccount = new PlayerAccount(p, args[0], System.currentTimeMillis());
                             this.playerAccountDAO.addAccount(playerAccount);
-
-                            // Add player to logged.
                             KathoUtils.getLoggedPlayers().add(p);
-                            // Aesthetics.
                             PreLogin.loginTitle.clearTitle(p);
-                            Title title = new Title(PluginMessages.get("loginWelcomeTitle"), PluginMessages.get("loginWelcomeSubtitle"), 1, 3, 1);
+                            Title title = new Title(this.pluginMessages.getAsString("loginWelcomeTitle"), this.pluginMessages.getAsString("loginWelcomeSubtitle"), 1, 3, 1);
                             title.send(p);
 
-                            p.sendMessage(PluginMessages.get("registerSuccess"));
+                            p.sendMessage(this.pluginMessages.getAsString("registerSuccess"));
                             return true;
 
                         } else {
-                            p.sendMessage(PluginMessages.get("registerConfirm"));
+                            p.sendMessage(this.pluginMessages.getAsString("registerConfirm"));
                             return true;
                         }
                     } else {
-                        p.sendMessage(PluginMessages.get("registerUsage"));
+                        p.sendMessage(this.pluginMessages.getAsString("registerUsage"));
                         return true;
                     }
                 } else {
-                    p.sendMessage(PluginMessages.get("registerAlready"));
+                    p.sendMessage(this.pluginMessages.getAsString("registerAlready"));
                     return true;
                 }
             } else {
-                p.sendMessage(PluginMessages.get("alreadyLogged"));
+                p.sendMessage(this.pluginMessages.getAsString("alreadyLogged"));
                 return true;
             }
         }

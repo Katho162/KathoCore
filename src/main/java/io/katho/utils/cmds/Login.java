@@ -1,13 +1,11 @@
 package io.katho.utils.cmds;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import io.katho.utils.KathoUtils;
 import io.katho.utils.listeners.PreLogin;
 import io.katho.utils.player.PlayerAccount;
 import io.katho.utils.player.PlayerAccountDAO;
-import io.katho.utils.player.PlayerAccountFile;
 import io.katho.utils.utils.PluginMessages;
+import io.katho.utils.utils.PluginMessagesImpl;
 import io.katho.utils.utils.Title;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -16,16 +14,16 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-import java.io.*;
-
 public class Login implements CommandExecutor {
 
     private Plugin plugin;
     private PlayerAccountDAO playerAccountDAO;
+    private PluginMessages pluginMessages;
 
-    public Login(Plugin plugin, PlayerAccountDAO playerAccountDAO) {
+    public Login(Plugin plugin, PlayerAccountDAO playerAccountDAO, PluginMessages pluginMessages) {
         this.plugin = plugin;
         this.playerAccountDAO = playerAccountDAO;
+        this.pluginMessages = pluginMessages;
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -48,21 +46,21 @@ public class Login implements CommandExecutor {
                         this.playerAccountDAO.updateAccount(playerAccount);
                         KathoUtils.getLoggedPlayers().add(p);
                         PreLogin.loginTitle.clearTitle(p);
-                        Title title = new Title(PluginMessages.get("loginWelcomeTitle"), PluginMessages.get("loginWelcomeSubtitle"), 1, 3, 1);
+                        Title title = new Title(this.pluginMessages.getAsString("loginWelcomeTitle"), this.pluginMessages.getAsString("loginWelcomeSubtitle"), 1, 3, 1);
                         title.send(p);
-                        p.sendMessage(PluginMessages.get("loginSuccess"));
+                        p.sendMessage(this.pluginMessages.getAsString("loginSuccess"));
 
                     } else {
-                        p.sendMessage(PluginMessages.get("loginUsage"));
+                        p.sendMessage(this.pluginMessages.getAsString("loginUsage"));
                         return true;
                     }
 
                 } else {
-                    p.sendMessage(PluginMessages.get("loginNotYet"));
+                    p.sendMessage(this.pluginMessages.getAsString("loginNotYet"));
                     return true;
                 }
             } else {
-                p.sendMessage(PluginMessages.get("alreadyLogged"));
+                p.sendMessage(this.pluginMessages.getAsString("alreadyLogged"));
                 return true;
             }
         }

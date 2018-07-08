@@ -5,4 +5,8 @@ version: 1.0.0
 main: io.katho.utils.KathoUtils
 commands:
    register:
+      description: You can register yourself using this command.
+      aliases: [registrar]
    login:
+      description: You log in yourself using this command.
+      aliases: [entrar]
