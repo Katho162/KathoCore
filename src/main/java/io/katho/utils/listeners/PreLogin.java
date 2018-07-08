@@ -1,15 +1,11 @@
 package io.katho.utils.listeners;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import io.katho.utils.KathoUtils;
+import io.katho.utils.player.PlayerAccountDAO;
 import io.katho.utils.utils.IOJSONUtils;
 import io.katho.utils.utils.PluginMessages;
 import io.katho.utils.utils.Title;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,19 +15,23 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.plugin.Plugin;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 
 public class PreLogin implements Listener {
 
     public static Title loginTitle;
+    private Plugin plugin;
+    private PlayerAccountDAO playerAccountDAO;
+
+    public PreLogin(Plugin plugin, PlayerAccountDAO playerAccountDAO) {
+        this.plugin = plugin;
+        this.playerAccountDAO = playerAccountDAO;
+    }
 
     @EventHandler
     public void moveEvent(PlayerMoveEvent e) {
@@ -89,8 +89,9 @@ public class PreLogin implements Listener {
         File playerFile = new File(KathoUtils.getInstance().getDataFolder() + "/accounts/" + p.getUniqueId() + ".account");
         long timestamp = System.currentTimeMillis();
 
-        if (playerFile.exists()) {
+        if (this.playerAccountDAO.existAccount(p.getUniqueId())) {
             try {
+
                 JSONObject configObj = IOJSONUtils.readFirst(KathoUtils.getInstance().getDataFolder() + "/config.json");
                 JSONObject playerObj = IOJSONUtils.readFirst(playerFile);
                 JSONObject authObj = (JSONObject) configObj.get("authentication");

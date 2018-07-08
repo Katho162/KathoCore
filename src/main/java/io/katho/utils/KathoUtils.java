@@ -3,6 +3,8 @@ package io.katho.utils;
 import io.katho.utils.cmds.Login;
 import io.katho.utils.cmds.Register;
 import io.katho.utils.listeners.PreLogin;
+import io.katho.utils.player.PlayerAccountDAO;
+import io.katho.utils.player.PlayerAccountDAOImpl;
 import io.katho.utils.utils.IOJSONUtils;
 import io.katho.utils.utils.PluginMessages;
 import io.katho.utils.utils.Title;
@@ -22,9 +24,11 @@ public class KathoUtils extends JavaPlugin {
 
     private static List<Player> loggedPlayers;
     private static KathoUtils instance;
+    private PlayerAccountDAO playerAccountDAO;
 
     public void onEnable() {
         instance = this;
+        this.playerAccountDAO = new PlayerAccountDAOImpl();
         loggedPlayers = new ArrayList<Player>();
         registerCommands();
         registerListeners();
@@ -34,13 +38,13 @@ public class KathoUtils extends JavaPlugin {
     }
 
     private void registerCommands() {
-        getCommand("register").setExecutor(new Register());
-        getCommand("login").setExecutor(new Login());
+        getCommand("register").setExecutor(new Register(this, this.playerAccountDAO));
+        getCommand("login").setExecutor(new Login(this, this.playerAccountDAO));
     }
 
     private void registerListeners() {
         PluginManager pm = Bukkit.getPluginManager();
-        pm.registerEvents(new PreLogin(), this);
+        pm.registerEvents(new PreLogin(this, this.playerAccountDAO), this);
     }
 
     private void buildFiles() {
