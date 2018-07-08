@@ -13,5 +13,7 @@
   "loginWelcomeTitle": "&eBem-vindo!",
   "loginWelcomeSubtitle": "Aproveite o servidor",
   "registerTitle": "&ePor-favor se registre:",
-  "registerSubtitle": "/register <senha> <senha>"
+  "registerSubtitle": "/register <senha> <senha>",
+  "reloadKick": "&cPor-favor re-entre em nosso servidor.",
+  "timeoutKick": "&cVocê demorou muito a entrar no servidor."
 }

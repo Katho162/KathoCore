@@ -99,6 +99,7 @@ public class Title {
         this.fadeOutTime = fadeOutTime;
         loadClasses();
     }
+
     /**
      * Load spigot and NMS classes
      */

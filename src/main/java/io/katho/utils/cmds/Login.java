@@ -1,42 +1,38 @@
 package io.katho.utils.cmds;
 
 import io.katho.utils.KathoUtils;
-import io.katho.utils.listeners.PreLogin;
 import io.katho.utils.player.PlayerAccount;
 import io.katho.utils.player.PlayerAccountDAO;
-import io.katho.utils.utils.PluginMessages;
-import io.katho.utils.utils.PluginMessagesImpl;
-import io.katho.utils.utils.Title;
+import io.katho.utils.player.PlayerAccountDAOImpl;
+import io.katho.utils.utils.TitleBuilder;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 
 public class Login implements CommandExecutor {
 
-    private Plugin plugin;
     private PlayerAccountDAO playerAccountDAO;
-    private PluginMessages pluginMessages;
 
-    public Login(Plugin plugin, PlayerAccountDAO playerAccountDAO, PluginMessages pluginMessages) {
-        this.plugin = plugin;
-        this.playerAccountDAO = playerAccountDAO;
-        this.pluginMessages = pluginMessages;
+    /**
+     * Login command is the command to handle all process of already registered players, make login on their acocunt.
+     */
+    public Login() {
+        this.playerAccountDAO = new PlayerAccountDAOImpl();
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.RED + "Apenas jogadores podem utilizar este comando.");
+            sender.sendMessage(ChatColor.RED + "Only players can use this command.");
             return true;
         }
 
         if (cmd.getName().equalsIgnoreCase("login")) {
             Player p = (Player) sender;
 
-            if (!KathoUtils.getLoggedPlayers().contains(p)) {
+            if (!KathoUtils.getLoggedIn().contains(p)) {
                 if (this.playerAccountDAO.existAccount(p.getUniqueId())) {
                     if (args.length == 1) {
 
@@ -44,23 +40,25 @@ public class Login implements CommandExecutor {
                         playerAccount.setLastLogin(System.currentTimeMillis());
                         playerAccount.setLastIP(p.getAddress().getHostName());
                         this.playerAccountDAO.updateAccount(playerAccount);
-                        KathoUtils.getLoggedPlayers().add(p);
-                        PreLogin.loginTitle.clearTitle(p);
-                        Title title = new Title(this.pluginMessages.getAsString("loginWelcomeTitle"), this.pluginMessages.getAsString("loginWelcomeSubtitle"), 1, 3, 1);
-                        title.send(p);
-                        p.sendMessage(this.pluginMessages.getAsString("loginSuccess"));
+                        KathoUtils.getLoggedIn().add(p);
+                        new TitleBuilder()
+                                .setTitle(KathoUtils.getPluginMessages().getAsString("loginWelcomeTitle"))
+                                .setSubtitle(KathoUtils.getPluginMessages().getAsString("loginWelcomeSubtitle"))
+                                .build()
+                                .send(p);
+                        p.sendMessage(KathoUtils.getPluginMessages().getAsString("loginSuccess"));
 
                     } else {
-                        p.sendMessage(this.pluginMessages.getAsString("loginUsage"));
+                        p.sendMessage(KathoUtils.getPluginMessages().getAsString("loginUsage"));
                         return true;
                     }
 
                 } else {
-                    p.sendMessage(this.pluginMessages.getAsString("loginNotYet"));
+                    p.sendMessage(KathoUtils.getPluginMessages().getAsString("loginNotYet"));
                     return true;
                 }
             } else {
-                p.sendMessage(this.pluginMessages.getAsString("alreadyLogged"));
+                p.sendMessage(KathoUtils.getPluginMessages().getAsString("alreadyLogged"));
                 return true;
             }
         }

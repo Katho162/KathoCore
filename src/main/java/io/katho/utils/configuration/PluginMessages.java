@@ -1,4 +1,4 @@
-package io.katho.utils.utils;
+package io.katho.utils.configuration;
 
 import com.google.gson.JsonElement;
 

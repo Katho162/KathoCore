@@ -14,7 +14,7 @@ public class PlayerAccountDAOImpl implements PlayerAccountDAO {
     private final String ACCOUNTS_DIR = KathoUtils.getInstance().getDataFolder() + "/accounts/";
 
     public PlayerAccountDAOImpl() {
-        this.gson = new GsonBuilder().setPrettyPrinting().create();
+        this.gson = new GsonBuilder().create();
     }
 
     @Override
