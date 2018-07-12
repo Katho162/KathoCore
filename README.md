@@ -11,7 +11,7 @@ Index
 
 About
 =================
-KathoCore was born into 2018 for solve some personal problems in servers with my friends. But today i work in it to improve cool things and improve my Java knowledge.
+KathoCore was born into 2018 for solve some personal problems in servers with my friends. But today i work in it to improve my Java knowledge and implement some cool things.
 
 Instalation
 =================
