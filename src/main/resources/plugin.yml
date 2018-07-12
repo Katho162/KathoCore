@@ -1,8 +1,8 @@
-name: KathoUtils
-description: A Plugin to make some good things like register, login, map and help the my private servers.
+name: KathoCore
+description: Just the best utils plugin.
 author: Katho
 version: 1.0.0
-main: io.katho.utils.KathoUtils
+main: io.katho.utils.Core
 commands:
    register:
       description: You can register yourself using this command.
