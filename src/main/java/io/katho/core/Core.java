@@ -30,7 +30,7 @@ public class Core extends JavaPlugin {
     private Gson gson;
 
     /**
-     * is the plugin bootsrap method.
+     * Is the plugin bootstrap method.
      */
     @Override
     public void onEnable() {
