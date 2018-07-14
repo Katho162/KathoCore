@@ -56,3 +56,11 @@ Login
 -----------------
 
 The login command is the log in the player in the server, using: `/login <password>`. but it works by an intelligent way, if player has the same IP of last login and it isn't 24h later than last login, the plugin will automaticly log in the player in the server.
+
+TODO
+=================
+- [X] Make a Register and Login inteligent system.
+- [ ] Make a Chest protection inteligent system.
+- [ ] Make a secure trading system.
+- [ ] Implement a mini criptocurrency as ecconomy.
+- [ ] Implement concurrency. 
