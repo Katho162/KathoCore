@@ -62,3 +62,4 @@ TODO
 - [ ] Make a secure trading system.
 - [ ] Implement a mini criptocurrency as ecconomy.
 - [ ] Implement concurrency. 
+- [ ] Implement a system to toggle plugin funcionalities.
