@@ -24,7 +24,7 @@ public class Core extends JavaPlugin {
     // Instance of this class for future references.
     private static Plugin INSTANCE;
     // List of logged players.
-    private static Collection<Player> LOGGED_PLAYERS;
+    private static Set<Player> LOGGED_PLAYERS;
     private static PluginMessages PLUGIN_MESSAGES;
     // Local Instance Stuff;
     private Gson gson;
@@ -35,7 +35,7 @@ public class Core extends JavaPlugin {
     @Override
     public void onEnable() {
         INSTANCE = this;
-        LOGGED_PLAYERS = new ArrayList<Player>();
+        LOGGED_PLAYERS = new HashSet<Player>();
         this.gson = new GsonBuilder().create();
         this.buildFiles();
         PLUGIN_MESSAGES = PluginMessagesFactory.makePluginMessages();
