@@ -2,7 +2,7 @@ name: KathoCore
 description: Just the best utils plugin.
 author: Katho
 version: 1.0.0
-main: io.katho.utils.Core
+main: io.katho.core.Core
 commands:
    register:
       description: You can register yourself using this command.
