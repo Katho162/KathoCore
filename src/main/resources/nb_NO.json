@@ -1,0 +1,19 @@
+{
+  "registerUsage": "&cBruk: /register <passord> <passord>",
+  "registerAlready": "&cDu er allerede registrert vær så snill bruk: /login <passord>",
+  "registerSuccess": "&eDu har vellykket registrert. Vær så snill memorere deg passord for framtid logg inner.",
+  "registerConfirm": "&cDeg passords trenge å vær sammen. /register <passord> <passord>",
+  "alreadyLogged": "&cDu er vellykket logg inn.",
+  "loginNotYet": "&cDu har ikke en konto: /register <passord> <passord>",
+  "loginUsage": "&cBruk: /login <passord>",
+  "loginSuccess": "&eDu har stiller",
+  "loginIncorrect": "&cStemmer ikke passord.",
+  "loginTitle": "&eVær så snill logg inn:",
+  "loginSubtitle": "/login <passord>",
+  "loginWelcomeTitle": "&eVelkommen!",
+  "loginWelcomeSubtitle": "Nyt serveren!",
+  "registerTitle": "&eVær så snill registrer deg selv:",
+  "registerSubtitle": "/register <passord> <passord>",
+  "reloadKick": "&cVær så snill re still på vår serveren.",
+  "timeoutKick": "&cDu har ta så lang å gjøre deg logg inn."
+}

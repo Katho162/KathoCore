@@ -1,0 +1,19 @@
+{
+  "registerUsage": "&cUse: /register <contraseña> <contraseña>",
+  "registerAlready": "&cUsted ya esta registrado por favor entre utilizando: /login <contraseña>",
+  "registerSuccess": "&eUsted esta registrado con éxito. Guarde o memorice su contraseña para volver a entrar.",
+  "registerConfirm": "&cLas dos contraseñas deben ser idénticas. /register <contraseña> <contraseña>",
+  "alreadyLogged": "&cUsted ya está conectado.",
+  "loginNotYet": "&cUsted todavia no tiene una cuenta por favor regístrese: /register <contraseña> <contraseña>",
+  "loginUsage": "&cUse: /login <contraseña>",
+  "loginSuccess": "&eHa ingresado con éxito!",
+  "loginIncorrect": "&cContraseña incorrecta.",
+  "loginTitle": "&ePor favor si logue:",
+  "loginSubtitle": "/login <contraseña>",
+  "loginWelcomeTitle": "&eBienvenido!",
+  "loginWelcomeSubtitle": "Aproveche el servidor",
+  "registerTitle": "&ePor favor registrese:",
+  "registerSubtitle": "/register <contraseña> <contraseña>",
+  "reloadKick": "&cPor favor reingrese en nuestro servidor.",
+  "timeoutKick": "&cUsted tardó mucho en entrar en el servidor."
+}
