@@ -1,9 +1,9 @@
 {
   "registerUsage": "&cBruke: /register <passord> <passord>",
   "registerAlready": "&cDu er allerede registrert. Bruke: /login <passord>",
-  "registerSuccess": "&eDu har vellykket registrert. Memorere deg passord for framtid logg inner.",
-  "registerConfirm": "&cPassordene ditt må være sammen. /register <passord> <passord>",
-  "alreadyLogged": "&cDu er vellykket logg inn.",
+  "registerSuccess": "&eDu har vellykt registrert. Memorer deg passord for logg inner i framtid.",
+  "registerConfirm": "&cPassordene må være like. /register <passord> <passord>",
+  "alreadyLogged": "&cDu er vellykt logg inn.",
   "loginNotYet": "&cHar du en konto? /register <passord> <passord>",
   "loginUsage": "&cBruke: /login <passord>",
   "loginSuccess": "&eSuksess",
