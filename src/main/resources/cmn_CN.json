@@ -1,0 +1,19 @@
+{
+  "registerUsage": "&c用法: /register <密码> <密码>",
+  "registerAlready": "&c您已经注册，请使用: /login <密码>",
+  "registerSuccess": "&e您已成功注册。 请记住您的密码以便将来登录。",
+  "registerConfirm": "&c你的密码必须相同。 /register <密码> <密码>",
+  "alreadyLogged": "&c你已经登录了。",
+  "loginNotYet": "&c你不有帐户: /register <密码> <密码>",
+  "loginUsage": "&c用法: /login <密码>",
+  "loginSuccess": "&e你登录了",
+  "loginIncorrect": "&c你的密码很不对。",
+  "loginTitle": "&e请登录:",
+  "loginSubtitle": "/login <密码>",
+  "loginWelcomeTitle": "&e欢迎!",
+  "loginWelcomeSubtitle": "享受服务器!",
+  "registerTitle": "&e请寄存器:",
+  "registerSubtitle": "/register <密码> <密码>",
+  "reloadKick": "&c请归队你们的服务器。",
+  "timeoutKick": "&c您需要很长时间才能登录。"
+}
