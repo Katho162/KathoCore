@@ -77,6 +77,11 @@ public class Core extends JavaPlugin {
         saveResource("config.json", false);
         saveResource("pt_BR.json", false);
         saveResource("en_US.json", false);
+		saveResource("cmn_CN.json", false);
+		saveResource("nb_NO.json", false);
+		saveResource("ru_RU.json", false);
+		saveResource("es_ES.json", false);
+		saveResource("de_DE.json", false);
     }
 
     /**

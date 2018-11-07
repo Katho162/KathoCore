@@ -10,6 +10,7 @@ Index
 * [Configuration](#configuration)
 * [Commands](#commands)
 * [TODO](#todo)
+* [Thanks](#thanks)
 
 About
 =================
@@ -63,3 +64,9 @@ TODO
 - [ ] Implement a mini criptocurrency as ecconomy.
 - [ ] Implement concurrency. 
 - [ ] Implement a system to toggle plugin funcionalities.
+
+Thanks
+=================
+- Hypnos thanks for did the Spanish es_ES translation. 🇪🇸
+- Yannick thanks for did the German de_DE translation. 🇩🇪
+- bignavigator thanks for did the Russian ru_RU translation. 🇷🇺
