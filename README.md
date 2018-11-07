@@ -67,6 +67,6 @@ TODO
 
 Thanks
 =================
-- :flag_es: Hypnos thanks for did the Spanish es_ES translation.
-- :flag_de: Yannick thanks for did the German de_DE translation.
-- :flag_ru: bignavigator thanks for did the Russian ru_RU translation.
+- Hypnos thanks for did the Spanish es_ES translation.
+- Yannick thanks for did the German de_DE translation.
+- bignavigator thanks for did the Russian ru_RU translation.
