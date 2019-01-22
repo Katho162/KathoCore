@@ -1,0 +1,19 @@
+{
+  "registerUsage": "&cGebruik: /register <password> <password>",
+  "registerAlready": "&cJe bent al geregistreerd! Gebruik: /login <password>",
+  "registerSuccess": "&eJe bent succesvol geregistreerd. Onthoud jouw wachtwoord goed!",
+  "registerConfirm": "&cWachtwoorden moeten overeenkomen. /register <password> <password>",
+  "alreadyLogged": "&cJe bent al ingelogd",
+  "loginNotYet": "&cJe hebt nog geen account! Gebruik: /register <password> <password>",
+  "loginUsage": "&cGebruik: /login <password>",
+  "loginSuccess": "&eJe bent succesvol ingelogd",
+  "loginIncorrect": "&cIncorrect wachtwoord.",
+  "loginTitle": "&eGelieve in te loggen:",
+  "loginSubtitle": "/login <password>",
+  "loginWelcomeTitle": "&eWelkom!",
+  "loginWelcomeSubtitle": "Geniet van de server!",
+  "registerTitle": "&eGelieve uzelf te registeren",
+  "registerSubtitle": "/register <password> <password>",
+  "reloadKick": "&cGelieve uw minecraft client te herstarten",
+  "timeoutKick": "&cHet kostte te lang om in te loggen!"
+}

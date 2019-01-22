@@ -70,3 +70,4 @@ Thanks
 - Hypnos thanks for helping with the Spanish es_ES translation.
 - Yannick thanks for helping with the German de_DE translation.
 - bignavigator thanks for helping with the Russian ru_RU translation.
+- steenooo thanks for helping with the Dutch nl_NL translation.
