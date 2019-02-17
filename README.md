@@ -6,7 +6,7 @@
 Index
 =================
 * [About](#about)
-* [Instalation](#instalation)
+* [Installation](#instalation)
 * [Configuration](#configuration)
 * [Commands](#commands)
 * [TODO](#todo)
@@ -16,7 +16,7 @@ About
 =================
 KathoCore was born into 2018 for solve some personal problems in servers with my friends. But today i work in it to improve my Java knowledge and implement some cool things.
 
-Instalation
+Installation
 =================
 You can compile the plugin from scratch using [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and [Maven](http://maven.apache.org). if you have them now you can just put that command in your command line:
 ```
@@ -58,10 +58,10 @@ The login command is the log in the player in the server, using: `/login <passwo
 
 TODO
 =================
-- [X] Make a Register and Login inteligent system.
-- [ ] Make a Chest protection inteligent system.
+- [X] Make a Register and Login intelligent system.
+- [ ] Make a Chest protection intelligent system.
 - [ ] Make a secure trading system.
-- [ ] Implement a mini criptocurrency as ecconomy.
+- [ ] Implement a mini cryptocurrency as ecconomy.
 - [ ] Implement concurrency. 
 - [ ] Implement a system to toggle plugin funcionalities.
 
