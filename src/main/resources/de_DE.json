@@ -2,8 +2,8 @@
 {
   "registerUsage": "&Benutzung: /register <passwort> <passwort>",
   "registerAlready": "&cDu bist bereits registriert. Bitte benutze: /login <passwort>",
-  "registerSuccess": "&eDu hast doch erfolgreich registriert. Bitte merke dir dein Passwort um dich in Zukunft anzumelden.",
-  "registerConfirm": "&cDeine Passwörter müssen die selben sein. /register <passwort> <passwort>",
+  "registerSuccess": "&eDu hast dich erfolgreich registriert. Bitte merke dir dein Passwort um dich in Zukunft anzumelden.",
+  "registerConfirm": "&cDeine Passwörter müssen die gleichen sein. /register <passwort> <passwort>",
   "alreadyLogged": "&cDu bist bereits angemeldet.",
   "loginNotYet": "&cDu hast noch keinen Account: /register <passwort> <passwort>",
   "loginUsage": "&cBenutzung: /login <passwort>",
