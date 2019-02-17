@@ -1,19 +1,19 @@
 {
-  "registerUsage": "&cUsage: /register <пароль> <пароль>",
+  "registerUsage": "&cИспользование: /register <пароль> <пароль>",
   "registerAlready": "&cВы уже зарегистрированы, пожалуйста воспользуйтесь: /login <пароль>",
   "registerSuccess": "&eВы успешно зарегистрировались. Пожалуйста, запомните свой пароль для дальнейших авторизаций.",
   "registerConfirm": "&cПароли должны совпадать. /register <пароль> <пароль>",
   "alreadyLogged": "&cВы уже авторизировались",
   "loginNotYet": "&cУ Вас даже нет аккаунта: /register <пароль> <пароль>",
-  "loginUsage": "&cUsage: /login <пароль>",
+  "loginUsage": "&cИспользование: /login <пароль>",
   "loginSuccess": "&eВы вошли",
   "loginIncorrect": "&cНеверный пароль.",
-  "loginTitle": "&ePlease log-in:",
+  "loginTitle": "&eПожалуйста войдите:",
   "loginSubtitle": "/login <пароль>",
   "loginWelcomeTitle": "&eДобро пожаловать!",
   "loginWelcomeSubtitle": "Наслаждайтесь сервером!",
   "registerTitle": "&eПожалуйста, зарегистрируйтесь:",
   "registerSubtitle": "/register <пароль> <пароль>",
-  "reloadKick": "&cПожалуйста, перезайдите в наш сервер",
+  "reloadKick": "&cПожалуйста, перезайдите на наш сервер",
   "timeoutKick": "&cВы потратили слишком много времени на вход."
 }
