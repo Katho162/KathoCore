@@ -68,6 +68,6 @@ TODO
 Thanks
 =================
 - Hypnos thanks for helping with the Spanish es_ES translation.
-- Yannick thanks for helping with the German de_DE translation.
+- Yannick a big thanks for helping with the German de_DE translation and to fix some another things in the english spelling.
 - bignavigator thanks for helping with the Russian ru_RU translation.
 - Esperanto2018 thanks for helping with the Czech cz_CZ and the Russian ru_RU translation.
