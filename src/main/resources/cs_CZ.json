@@ -1,0 +1,19 @@
+{
+  "registerUsage": "&cPoužití: /register <password> <password>",
+  "registerAlready": "&cUž máte účet. Prosíme použijte /login <password>",
+  "registerSuccess": "&eRegistrace proběhla úspěšně. Prosíme, zapamatujte si svoje heslo pro další přihlašení.",
+  "registerConfirm": "&cHesla mají být stejná. /register <password> <password>",
+  "alreadyLogged": "&cJiž jste přihlášen/a.",
+  "loginNotYet": "&cNemáte účet. Zaregistrujte se pomocí: /register <password> <password>",
+  "loginUsage": "&cPoužití: /login <password>",
+  "loginSuccess": "&eJste se přihlásil/a",
+  "loginIncorrect": "&cNesprávné heslo.",
+  "loginTitle": "&ePřihláste se :",
+  "loginSubtitle": "/login <password>",
+  "loginWelcomeTitle": "&eVítáme vás!",
+  "loginWelcomeSubtitle": "Užijte si hru na našem serveru!",
+  "registerTitle": "&eProsíme, zaregistrujte se",
+  "registerSubtitle": "/register <password> <password>",
+  "reloadKick": "&cProsíme, připojte se na náš server znovu",
+  "timeoutKick": "&cJste se příliš dlouho přihlašoval."
+}
