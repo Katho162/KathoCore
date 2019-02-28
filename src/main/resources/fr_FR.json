@@ -1,0 +1,19 @@
+{
+  "registerUsage": "&cUsage: /register <mot de passe> <mot de passe>",
+  "registerAlready": "&cVous êtes déjà inscrit, s’il vous plaît utilisez : /login <mot de passe>",
+  "registerSuccess": "&eVous avez été inscrit avec succès. Veuillez mémoriser votre mot de passe pour vos futures connexions.",
+  "registerConfirm": "&cVos mots de passes doivent être les mêmes. /register <mot de passe> <mot de passe>",
+  "alreadyLogged": "&cVous êtes déjà connecté.",
+  "loginNotYet": "&cVous n’avez pas de compte : /register <mot de passe> <mot de passe>",
+  "loginUsage": "&cUsage: /login <mot de passe>",
+  "loginSuccess": "&eVous avez été connecté à",
+  "loginIncorrect": "&cMot de passe incorrect.",
+  "loginTitle": "&eS’il vous plaît, connectez-vous :",
+  "loginSubtitle": "/login <mot de passe>",
+  "loginWelcomeTitle": "&eBienvenue !",
+  "loginWelcomeSubtitle": "Profitez du serveur !",
+  "registerTitle": "&eMerci de vous inscrire :",
+  "registerSubtitle": "/register <mot de passe> <mot de passe>",
+  "reloadKick": "&cMerci de rejoindre notre serveur.",
+  "timeoutKick": "&cVous avez mis trop de temps pour vous connecter."
+}

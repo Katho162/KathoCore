@@ -67,6 +67,7 @@ TODO
 
 Thanks
 =================
+- Angélique ❤️ thanks for helping with the French fr_FR translation!! 
 - Hypnos thanks for helping with the Spanish es_ES translation.
 - Yannick a big thanks for helping with the German de_DE translation and to fix some another things in the english spelling.
 - bignavigator thanks for helping with the Russian ru_RU translation.
